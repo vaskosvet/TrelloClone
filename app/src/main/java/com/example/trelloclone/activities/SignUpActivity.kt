@@ -6,11 +6,13 @@ import android.text.TextUtils
 import android.view.WindowManager
 import android.widget.Toast
 import com.example.trelloclone.R
+import com.example.trelloclone.firebase.FirestoreClass
+import com.example.trelloclone.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
-import kotlinx.android.synthetic.main.activity_sign_up.et_email
+import kotlinx.android.synthetic.main.activity_sign_up.et_email_sign_up
 
 class SignUpActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +23,17 @@ class SignUpActivity : BaseActivity() {
         )
         setContentView(R.layout.activity_sign_up)
         setUpActionBar()
+    }
+
+    fun userRegisteredSuccess() {
+        Toast.makeText(
+            this,
+            "You have successfully registered ",
+            Toast.LENGTH_SHORT
+        ).show()
+        hideProgressDialog()
+        FirebaseAuth.getInstance().signOut()
+        finish()
     }
 
     private fun setUpActionBar() {
@@ -39,24 +52,19 @@ class SignUpActivity : BaseActivity() {
 
     private fun registerUser() {
         val name: String = et_name.text.toString().trim { it <= ' ' }
-        val email: String = et_email.text.toString().trim { it <= ' ' }
+        val email: String = et_email_sign_up.text.toString().trim { it <= ' ' }
         val password: String = et_password_sign_up.text.toString().trim { it <= ' ' }
 
         if (validateForm(name, email, password)) {
             showProgressDialog(resources.getString(R.string.please_wait))
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
-                    hideProgressDialog()
+
                     if (task.isSuccessful) {
                         val firebaseUser: FirebaseUser = task.result!!.user!!
                         val registeredEmail = firebaseUser.email!!
-                        Toast.makeText(
-                            this,
-                            "$name you have successfully registered the email address $registeredEmail",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        FirebaseAuth.getInstance().signOut()
-                        finish()
+                        val user = User(firebaseUser.uid, name, registeredEmail)
+                        FirestoreClass().registerUser(this, user)
                     } else {
                         Toast.makeText(this, task.exception!!.message, Toast.LENGTH_SHORT)
                             .show()
