@@ -4,10 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable-v24/white_border_shape_button_rounded.xml" value="0.1" />
+        <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/shape_button_rounded.xml" value="0.1" />
+        <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_base.xml" value="0.36594202898550726" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_intro.xml" value="0.2841225626740947" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_main.xml" value="0.20845997973657548" />
+        <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
+        <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_sign_up.xml" value="0.2644927536231884" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/dialog_progress.xml" value="0.35170940170940174" />
       </map>
     </option>
   </component>

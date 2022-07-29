@@ -6,7 +6,7 @@
     android:background="@drawable/intro_background"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".IntroActivity">
+    tools:context=".activities.IntroActivity">
 
     <TextView
         android:id="@+id/tv_app_name_intro"
@@ -80,4 +80,4 @@
         android:text="@string/sign_up"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/btn_text_size" />
-</LinearLayout><!--END-->
+</LinearLayout>
