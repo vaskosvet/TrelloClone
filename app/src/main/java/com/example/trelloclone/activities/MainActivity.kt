@@ -26,31 +26,25 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-
     private lateinit var mUserName: String
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
-
         setContentView(R.layout.activity_main)
 
         setupActionBar()
 
-
         nav_view.setNavigationItemSelectedListener(this)
-
 
         showProgressDialog(resources.getString(R.string.please_wait))
         FirestoreClass().loadUserData(this@MainActivity, true)
 
-
         fab_create_board.setOnClickListener {
             val intent = Intent(this@MainActivity, CreateBoardActivity::class.java)
             intent.putExtra(Constants.NAME, mUserName)
-            startActivity(intent)
+            startActivityForResult(intent, CREATE_BOARD_REQUEST_CODE)
         }
     }
 
@@ -72,11 +66,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                     MY_PROFILE_REQUEST_CODE
                 )
             }
-
             R.id.nav_sign_out -> {
 
                 FirebaseAuth.getInstance().signOut()
-
 
                 val intent = Intent(this, IntroActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -96,11 +88,12 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         ) {
 
             FirestoreClass().loadUserData(this@MainActivity)
+        } else if (resultCode == Activity.RESULT_OK && requestCode == CREATE_BOARD_REQUEST_CODE) {
+            FirestoreClass().getBoardsList(this)
         } else {
             Log.e("Cancelled", "Cancelled")
         }
     }
-
 
     private fun setupActionBar() {
 
@@ -112,7 +105,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         }
     }
 
-
     private fun toggleDrawer() {
 
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -121,7 +113,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             drawer_layout.openDrawer(GravityCompat.START)
         }
     }
-
 
     fun updateNavigationUserDetails(user: User, isToReadBoardsList: Boolean) {
 
@@ -134,7 +125,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
 
         val navUserImage = headerView.findViewById<ImageView>(R.id.nav_user_image)
-
 
         Glide
             .with(this@MainActivity)
@@ -156,7 +146,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
     }
 
-
     fun populateBoardsListToUI(boardsList: ArrayList<Board>) {
 
         hideProgressDialog()
@@ -172,6 +161,13 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
             val adapter = BoardItemsAdapter(this@MainActivity, boardsList)
             rv_boards_list.adapter = adapter
+
+            adapter.setOnClickListener(object : BoardItemsAdapter.OnClickListener {
+                override fun onClick(position: Int, model: Board) {
+                    startActivity(Intent(this@MainActivity, TaskListActivity::class.java))
+                }
+            })
+
         } else {
             rv_boards_list.visibility = View.GONE
             tv_no_boards_available.visibility = View.VISIBLE
@@ -181,5 +177,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
     companion object {
         const val MY_PROFILE_REQUEST_CODE: Int = 11
+        const val CREATE_BOARD_REQUEST_CODE: Int = 12
     }
 }

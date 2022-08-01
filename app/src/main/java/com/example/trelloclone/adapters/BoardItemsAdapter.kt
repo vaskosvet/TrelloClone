@@ -15,7 +15,7 @@ open class BoardItemsAdapter(
     private var list: ArrayList<Board>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var onClickListener: OnClickListenerInterface? = null
+    private var onClickListener: OnClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
@@ -52,8 +52,12 @@ open class BoardItemsAdapter(
         return list.size
     }
 
-    interface OnClickListenerInterface {
+    interface OnClickListener {
         fun onClick(position: Int, model: Board)
+    }
+
+    fun setOnClickListener(onClickListener: OnClickListener) {
+        this.onClickListener = onClickListener
     }
 
     private class MyViewHolder(view: View) : RecyclerView.ViewHolder(view)
