@@ -17,6 +17,7 @@ data class Card(
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
         parcel.writeString(createdBy)
+        parcel.writeStringList(assignedTo)
     }
 
     override fun describeContents(): Int {

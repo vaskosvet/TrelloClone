@@ -135,7 +135,9 @@ class MyProfileActivity : BaseActivity() {
             userHashMap[Constants.NAME] = et_name.text.toString()
         }
         //POTENTIAL PHONE ISSUE
-        if (et_mobile.text.toString() != mUserDetails.mobile.toString()) {
+        if (et_mobile.text.toString() == "") {
+            userHashMap[Constants.MOBILE] = 0L
+        } else if (et_mobile.text.toString() != mUserDetails.mobile.toString()) {
             userHashMap[Constants.MOBILE] = et_mobile.text.toString().toLong()
         }
         FirestoreClass().updateUserProfileData(this, userHashMap)

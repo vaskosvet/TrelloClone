@@ -1,4 +1,4 @@
-package com.projemanag.adapters
+package com.example.trelloclone.adapters
 
 import android.content.Context
 import android.view.LayoutInflater

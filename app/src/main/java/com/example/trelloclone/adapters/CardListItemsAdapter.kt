@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trelloclone.R
 import com.example.trelloclone.models.Card
+
 import kotlinx.android.synthetic.main.item_card.view.*
 
 open class CardListItemsAdapter(
@@ -16,6 +17,12 @@ open class CardListItemsAdapter(
 
     private var onClickListener: OnClickListener? = null
 
+    /**
+     * Inflates the item views which is designed in xml layout file
+     *
+     * create a new
+     * {@link ViewHolder} and initializes some private fields to be used by RecyclerView.
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
         return MyViewHolder(
@@ -27,31 +34,57 @@ open class CardListItemsAdapter(
         )
     }
 
-
+    /**
+     * Binds each item in the ArrayList to a view
+     *
+     * Called when RecyclerView needs a new {@link ViewHolder} of the given type to represent
+     * an item.
+     *
+     * This new ViewHolder should be constructed with a new View that can represent the items
+     * of the given type. You can either create a new View manually or inflate it from an XML
+     * layout file.
+     */
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val model = list[position]
 
         if (holder is MyViewHolder) {
 
             holder.itemView.tv_card_name.text = model.name
+
+            // TODO (Step 7: Set a click listener to the card item view.)
+            // START
+            holder.itemView.setOnClickListener {
+                if (onClickListener != null) {
+                    onClickListener!!.onClick(position)
+                }
+            }
+            // END
         }
     }
 
-
+    /**
+     * Gets the number of items in the list
+     */
     override fun getItemCount(): Int {
         return list.size
     }
 
-
+    /**
+     * A function for OnClickListener where the Interface is the expected parameter..
+     */
     fun setOnClickListener(onClickListener: OnClickListener) {
         this.onClickListener = onClickListener
     }
 
-
+    /**
+     * An interface for onclick items.
+     */
     interface OnClickListener {
-        fun onClick(position: Int, card: Card)
+        fun onClick(cardPosition: Int)
     }
 
-
+    /**
+     * A ViewHolder describes an item view and metadata about its place within the RecyclerView.
+     */
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view)
 }
