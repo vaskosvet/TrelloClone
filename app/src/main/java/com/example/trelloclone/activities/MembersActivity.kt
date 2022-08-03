@@ -2,6 +2,7 @@ package com.example.trelloclone.activities
 
 import android.app.Activity
 import android.app.Dialog
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -96,7 +97,7 @@ class MembersActivity : BaseActivity() {
     }
 
     override fun onBackPressed() {
-        if (anyChangesMade){
+        if (anyChangesMade) {
             setResult(Activity.RESULT_OK)
         }
         super.onBackPressed()
@@ -107,5 +108,21 @@ class MembersActivity : BaseActivity() {
         mAssignedMembersList.add(user)
         anyChangesMade = true
         setupMembersList(mAssignedMembersList)
+    }
+
+    private inner class SendNotificationToUserAsyncTask : AsyncTask<Any, Void, String>() {
+        override fun onPreExecute() {
+            showProgressDialog(resources.getString(R.string.please_wait))
+            super.onPreExecute()
+        }
+
+        override fun doInBackground(vararg p0: Any?): String {
+            //TODO
+        }
+
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            hideProgressDialog()
+        }
     }
 }

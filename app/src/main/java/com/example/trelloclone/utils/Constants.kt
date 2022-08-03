@@ -26,6 +26,20 @@ object Constants {
     const val SELECT: String = "Select"
     const val UN_SELECT: String = "UnSelect"
 
+    const val PROJEMANAG_PREFERENCES = "ProjemanagPrefs"
+    const val FCM_TOKEN_UPDATED = "fcmTokenUpdated"
+    const val FCM_TOKEN = "fcmToken"
+
+    const val FCM_BASE_URL: String = "https://fcm.googleapis.com/fcm/send"
+    const val FCM_AUTHORIZATION: String = "authorization"
+    const val FCM_KEY: String = "key"
+    const val FCM_SERVER_KEY: String =
+        "AAAAJb8znR8:APA91bGDngTT4rxDdvKl0aXxdkRI7q95ZGEP9FCFDaq67MBIdlBR0ptJWq19I6c3BH6nK7xUIpslNKJ4auILG7a_Ye13mq59_wP1jKH8nFf06Ard3OmjChPBFS1v-EH-6u69jUnQxmcs"
+    const val FCM_KEY_TITLE: String = "title"
+    const val FCM_KEY_MESSAGE: String = "message"
+    const val FCM_KEY_DATA: String = "data"
+    const val FCM_KEY_TO: String = "to"
+
     const val TASK_LIST_ITEM_POSITION: String = "task_list_item_position"
     const val CARD_LIST_ITEM_POSITION: String = "card_list_item_position"
 
