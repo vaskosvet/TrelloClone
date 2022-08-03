@@ -7,17 +7,20 @@
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable-v24/shape_dialog_rounded.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable-v24/white_border_shape_button_rounded.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/ic_action_navigation_menu.xml" value="0.1" />
+        <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/ic_add_member.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/ic_black_color_back_24dp.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/ic_vector_color_accent_done_24dp.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/ic_vector_delete_24dp.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/nav_header_main_background.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/shape_button_rounded.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/drawable/white_border_shape_button_rounded.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout-w936dp/dialog_list.xml" value="0.21243169398907105" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout-w936dp/item_board.xml" value="0.5" />
+        <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout-w936dp/item_member.xml" value="0.21243169398907105" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_base.xml" value="0.36594202898550726" />
-        <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_card_details.xml" value="0.2817028985507246" />
+        <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_card_details.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_create_board.xml" value="0.1" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_intro.xml" value="0.2841225626740947" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/activity_main.xml" value="0.20845997973657548" />
@@ -34,6 +37,7 @@
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/dialog_search_member.xml" value="0.2817028985507246" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/item_board.xml" value="0.28396739130434784" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/item_card.xml" value="0.2817028985507246" />
+        <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/item_card_selected_member.xml" value="0.2817028985507246" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/item_label_color.xml" value="0.21243169398907105" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/item_member.xml" value="0.2817028985507246" />
         <entry key="..\:/Users/vasil.ivanov/AndroidStudioProjects/TrelloClone/app/src/main/res/layout/item_task.xml" value="0.22" />
